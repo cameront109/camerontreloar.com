@@ -1,9 +1,6 @@
 const slides = [
-    "images/slide01.jpg",
-    "images/slide02.jpg",
-    "images/slide03.jpg",
-    "images/slide04.jpg",
-    "images/slide05.jpg"
+    "images/slideshow1.jpg",
+    "images/slideshow2.jpg"
 ];
 
 let current = 0;
