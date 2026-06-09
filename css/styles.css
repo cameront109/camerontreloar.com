@@ -1,1 +1,348 @@
-@charset "UTF-8";
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    color: #fff;
+
+    font-family: Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* MAIN CONTAINER */
+
+.site {
+    width: min(1280px, 90vw);
+    margin: 80px auto;
+    position: relative;
+}
+
+/* LOGO */
+
+.logo {
+    position: absolute;
+    top: 120px;
+    left: 40px;
+
+    font-family: Georgia, serif;
+    font-size: 4rem;
+    letter-spacing: 4px;
+    font-weight: 400;
+
+    z-index: 20;
+}
+
+/* TOP NAVIGATION */
+
+.top-nav {
+    width: 75%;
+    margin-left: auto;
+
+    display: flex;
+
+    position: relative;
+    z-index: 10;
+}
+
+.top-nav a {
+    flex: 1;
+
+    background: #5c5c5f;
+    color: white;
+
+    text-decoration: none;
+    text-align: center;
+
+    padding: 24px 0;
+
+    letter-spacing: 4px;
+    font-size: 0.8rem;
+}
+
+.top-nav a:last-child {
+    background: #9c9c9c;
+}
+
+/* HERO PANEL */
+
+.hero {
+    width: 75%;
+    height: 280px;
+
+    margin-left: auto;
+
+    background: #d9d9d9;
+}
+
+/* CONTENT AREA */
+
+.content-wrapper {
+    display: flex;
+
+    width: 92%;
+
+    margin-top: -80px;
+}
+
+/* LEFT SIDEBAR */
+
+.side-nav {
+    width: 300px;
+
+    background: #5f5f62;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-top: 40px;
+
+    z-index: 5;
+}
+
+.side-nav a {
+    color: white;
+
+    text-decoration: none;
+
+    padding: 36px;
+
+    letter-spacing: 5px;
+
+    font-size: 0.9rem;
+}
+
+/* MAIN CONTENT PANEL */
+
+.content {
+    flex: 1;
+
+    background: #353535;
+
+    padding: 50px;
+}
+
+/* SLIDESHOW */
+
+.slideshow-container {
+    position: relative;
+
+    width: 100%;
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+#slideshow {
+    width: 100%;
+    display: block;
+}
+
+/* ARROWS */
+
+.arrow {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    font-size: 3rem;
+
+    cursor: pointer;
+
+    transition: opacity 0.2s;
+}
+
+.arrow:hover {
+    opacity: 0.5;
+}
+
+.left {
+    left: -60px;
+}
+
+.right {
+    right: -60px;
+}
+
+/* INTRO */
+
+.intro {
+    margin-top: 40px;
+
+    max-width: 700px;
+
+    letter-spacing: 2px;
+    line-height: 1.8;
+}
+
+/* CONTACT */
+
+.contact-section {
+    margin-top: 80px;
+
+    max-width: 600px;
+}
+
+.contact-section h2 {
+    margin-bottom: 30px;
+
+    font-weight: 300;
+
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+
+    color: #cfcfcf;
+}
+
+input,
+textarea {
+    background: transparent;
+
+    border: none;
+    border-bottom: 1px solid #777;
+
+    color: white;
+
+    padding: 12px 0;
+
+    font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-bottom-color: white;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    width: fit-content;
+
+    background: transparent;
+
+    border: 1px solid #888;
+
+    color: white;
+
+    padding: 14px 32px;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background: white;
+    color: black;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .site {
+        width: 100%;
+        margin: 40px auto;
+    }
+
+    .logo {
+        position: static;
+
+        text-align: center;
+
+        margin-bottom: 30px;
+
+        font-size: 2.8rem;
+    }
+
+    .top-nav {
+        width: 60%;
+        margin-left: auto;
+    }
+
+    .top-nav a {
+        padding: 18px 0;
+        font-size: 0.65rem;
+    }
+
+    .hero {
+        width: 60%;
+        height: 180px;
+    }
+
+    .content-wrapper {
+        margin-top: 0;
+
+        width: 100%;
+    }
+
+    .side-nav {
+        width: 130px;
+        min-width: 130px;
+    }
+
+    .side-nav a {
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+
+        padding: 25px 0;
+
+        text-align: center;
+
+        letter-spacing: 4px;
+    }
+
+    .content {
+        padding: 25px;
+    }
+
+    .left {
+        left: -30px;
+    }
+
+    .right {
+        right: -30px;
+    }
+
+    .arrow {
+        font-size: 2rem;
+    }
+
+    .contact-section {
+        margin-top: 50px;
+    }
+}
