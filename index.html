@@ -3,127 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cameron</title>
+    <title>Cameron.</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="site">
+    <div class="site">
 
-    <!-- Logo -->
-    <header class="logo">
-        Cameron.
-    </header>
+        <!-- Logo -->
+        <header class="logo">
+            Cameron.
+        </header>
 
-    <!-- Top Navigation -->
-    <nav class="top-nav">
-        <a href="#">CONTACT</a>
-        <a href="#">PROJECTS</a>
-        <a href="#">ABOUT</a>
-        <a href="#">PRINTS</a>
-        <a href="#">CONTACT</a>
-    </nav>
-
-    <!-- Hero -->
-    <section class="hero">
-    </section>
-
-    <!-- Main Content -->
-    <section class="content-wrapper">
-
-        <!-- Side Nav -->
-        <aside class="side-nav">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <a href="#">WORK</a>
+            <a href="#">PROJECTS</a>
+            <a href="#">ABOUT</a>
+            <a href="#">PRINTS</a>
             <a href="#">CONTACT</a>
-            <a href="#">CONTACT</a>
-            <a href="#">CONTACT</a>
-            <a href="#">CONTACT</a>
-            <a href="#">CONTACT</a>
-        </aside>
+        </nav>
 
-        <!-- Content -->
-        <main class="content">
+        <!-- Hero Background Panel -->
+        <section class="hero"></section>
 
-            <div class="slideshow-container">
+        <!-- Main Content Area -->
+        <section class="content-wrapper">
 
-                <button class="arrow left">
-                    &#10094;
-                </button>
+            <!-- Left Navigation -->
+            <aside class="side-nav">
+                <a href="#">TOKYO</a>
+                <a href="#">KYOTO</a>
+                <a href="#">OSAKA</a>
+                <a href="#">PORTRAITS</a>
+                <a href="#">CONTACT</a>
+            </aside>
 
-                <img
-                    id="slideshow"
-                    src="images/slide01.jpg"
-                    alt="Portfolio">
+            <!-- Main Content -->
+            <main class="content">
 
-                <button class="arrow right">
-                    &#10095;
-                </button>
+                <div class="slideshow-container">
 
-            </div>
+                    <button class="arrow left" id="prev">
+                        &#10094;
+                    </button>
 
-            <div class="text-content">
-                <p>
-                    Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit.
-                    Curabitur semper libero
-                    in luctus.
-                </p>
-            </div>
+                    <img
+                        id="slideshow"
+                        src="images/slide01.jpg"
+                        alt="Photography Portfolio">
 
-            <div>
-                <div class="text-content">
+                    <button class="arrow right" id="next">
+                        &#10095;
+                    </button>
 
-    <h2>Contact</h2>
+                </div>
 
-    <form
-        name="contact"
-        method="POST"
-        netlify>
+                <section class="intro">
 
-        <input
-            type="hidden"
-            name="form-name"
-            value="contact">
+                    <p>
+                        Documentary photography and visual storytelling
+                        from Japan and beyond.
+                    </p>
 
-        <div class="form-group">
-            <label>Name</label>
-            <input
-                type="text"
-                name="name"
-                required>
-        </div>
+                </section>
 
-        <div class="form-group">
-            <label>Email</label>
-            <input
-                type="email"
-                name="email"
-                required>
-        </div>
+                <!-- Contact Form -->
 
-        <div class="form-group">
-            <label>Message</label>
-            <textarea
-                name="message"
-                rows="6"
-                required></textarea>
-        </div>
+                <section class="contact-section">
 
-        <button type="submit">
-            Send
-        </button>
+                    <h2>Contact</h2>
 
-    </form>
+                    <form
+                        name="contact"
+                        method="POST"
+                        data-netlify="true">
 
-</div>
+                        <input
+                            type="hidden"
+                            name="form-name"
+                            value="contact">
 
-        </main>
+                        <div class="form-group">
+                            <label for="name">Name</label>
 
-    </section>
+                            <input
+                                id="name"
+                                type="text"
+                                name="name"
+                                required>
+                        </div>
 
-</div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
 
-<script src="js/slideshow.js"></script>
+                            <input
+                                id="email"
+                                type="email"
+                                name="email"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                required></textarea>
+                        </div>
+
+                        <button type="submit">
+                            Send
+                        </button>
+
+                    </form>
+
+                </section>
+
+            </main>
+
+        </section>
+
+    </div>
+
+    <script>
+        const slides = [
+            "images/slide01.jpg",
+            "images/slide02.jpg",
+            "images/slide03.jpg",
+            "images/slide04.jpg",
+            "images/slide05.jpg"
+        ];
+
+        let currentSlide = 0;
+
+        const image = document.getElementById("slideshow");
+        const next = document.getElementById("next");
+        const prev = document.getElementById("prev");
+
+        next.addEventListener("click", () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            image.src = slides[currentSlide];
+        });
+
+        prev.addEventListener("click", () => {
+            currentSlide =
+                (currentSlide - 1 + slides.length) % slides.length;
+
+            image.src = slides[currentSlide];
+        });
+    </script>
 
 </body>
 </html>
